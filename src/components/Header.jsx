@@ -10,10 +10,10 @@ function Header(){
         flex justify-between 
         px-2 py-3 
         fixed z-10  
-        transition-all duration-300
+        transition duration-300
         md:px-8 ">
             <img src="https://www.anmolherb.in/assets/img/logo.png" alt="Liv Muztang" className="h-10 w-auto"/>
-            <PhoneButton></PhoneButton>
+            <PhoneButton content="+91-9311900247"></PhoneButton>
         </div>
     )
 }

@@ -1,6 +1,6 @@
-import { PhoneIcon, UserIcon } from '@heroicons/react/24/solid';
+import { PhoneIcon } from '@heroicons/react/24/solid';
 
-function PhoneButton(){
+function PhoneButton({content}){
     return(
         <div className="relative inline-flex">
             {/* Glow layer */}
@@ -19,7 +19,7 @@ function PhoneButton(){
                         transition ease-in-out duration-150"
             >
                 <PhoneIcon className="h-6 w-6" />
-                <p className="font-medium">+91-9311900247</p>
+                <p className="font-medium">{content}</p>
             </a>
         </div>
     )

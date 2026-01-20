@@ -3,7 +3,7 @@ import Main from "./components/main"
 function App() {
   return (
     <>
-    <div className="relative">
+    <div className="max-w-screen">
       <Header/>
       <Main/>
     </div>
