@@ -11,7 +11,7 @@ function PhoneButton({content}){
 
             {/* Button */}
             <a
-                href=""
+                href="tel:+91-9311900247"
                 className="flex items-center gap-2
                         bg-linear-to-r from-[#FF6C00] to-[#a04300]
                         text-white rounded-3xl px-4 py-2 h-10
