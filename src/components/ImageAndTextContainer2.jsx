@@ -1,58 +1,56 @@
-import ImageCard from "./ImageCard"
-import { CheckIcon } from "@heroicons/react/24/outline";
-import PhoneButton from "./PhoneButton"
-import {UsersIcon} from "@heroicons/react/24/solid";
-function ImageAndTextContainer2(){
+import ImageCard from './ImageCard';
+import { CheckIcon } from '@heroicons/react/24/outline';
+import PhoneButton from './PhoneButton';
+import { UsersIcon } from '@heroicons/react/24/solid';
+function ImageAndTextContainer2() {
   return (
     <>
-      <h1 className="text-3xl md:text-5xl leading-12 md:leading-18 text-center
-          bg-linear-to-r from-[#0b1114] via-[#613619] to-[#FF6C00] bg-clip-text text-transparent
-      ">
+      <h1 className="bg-linear-to-r from-[#0b1114] via-[#613619] to-[#FF6C00] bg-clip-text text-center text-3xl leading-12 text-transparent md:text-5xl md:leading-18">
         अफ्रीकन मुलोंडो की शक्ति के साथ रात को थकना मना है।
       </h1>
 
-      <div className="ImageAndTextContainer2 w-full flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+      <div className="ImageAndTextContainer2 flex w-full flex-col gap-6 md:flex-row md:items-center md:justify-between">
         <div className="TextContainer m-2 md:w-1/2">
-        
-          <p className="text-xl font-bold flex items-start xl:m-4">
-            <CheckIcon className="h-14 w-14 bg-[#ece9e4] rounded-2xl text-[#c15200] m-1 p-4"/>
+          <p className="flex items-start text-xl font-bold xl:m-4">
+            <CheckIcon className="m-1 h-14 w-14 rounded-2xl bg-[#ece9e4] p-4 text-[#c15200]" />
             <span className="my-auto">अफ्रीकन मुलोंडो</span>
           </p>
-           <p className="text-xl font-bold flex items-start xl:m-4">
-            <CheckIcon className="h-14 w-14 bg-[#ece9e4] rounded-2xl text-[#c15200] m-1 p-4"/>
+          <p className="flex items-start text-xl font-bold xl:m-4">
+            <CheckIcon className="m-1 h-14 w-14 rounded-2xl bg-[#ece9e4] p-4 text-[#c15200]" />
             <span className="my-auto">अश्वगंधा</span>
           </p>
-           <p className="text-xl font-bold flex items-start xl:m-4">
-            <CheckIcon className="h-14 w-14 bg-[#ece9e4] rounded-2xl text-[#c15200] m-1 p-4"/>
+          <p className="flex items-start text-xl font-bold xl:m-4">
+            <CheckIcon className="m-1 h-14 w-14 rounded-2xl bg-[#ece9e4] p-4 text-[#c15200]" />
             <span className="my-auto">गोक्षुरा</span>
           </p>
-            <p className="text-xl font-bold flex items-start xl:m-4">
-            <CheckIcon className="h-14 w-14 bg-[#ece9e4] rounded-2xl text-[#c15200] m-1 p-4"/>
-            <span className="my-auto mb-8">शतावरी जैसी जड़ीबूटियों के लाभ पाने के लिए</span>
+          <p className="flex items-start text-xl font-bold xl:m-4">
+            <CheckIcon className="m-1 h-14 w-14 rounded-2xl bg-[#ece9e4] p-4 text-[#c15200]" />
+            <span className="my-auto mb-8">
+              शतावरी जैसी जड़ीबूटियों के लाभ पाने के लिए
+            </span>
           </p>
           <PhoneButton content="जल्द बुक करें +91-9311900247" />
         </div>
 
-        <div className="ImageContainer relative mx-auto m-2 md:w-1/2 h-stretch ">
-            <div>
+        <div className="ImageContainer h-stretch relative m-2 mx-auto md:w-1/2">
+          <div>
             <ImageCard
-                src="https://www.anmolherb.in/assets/img/livmuztang-4.webp"
-                alt="couple holding product"
-                className="w-[90%] mx-auto md:w-96 lg:w-120 xl:w-135 object-cover rounded-2xl md:mr-4 relative"
-            >
-            </ImageCard>
+              src="https://www.anmolherb.in/assets/img/livmuztang-4.webp"
+              alt="couple holding product"
+              className="relative mx-auto w-[90%] rounded-2xl object-cover md:mr-4 md:w-96 lg:w-120 xl:w-135"
+            ></ImageCard>
+          </div>
+          <div className="absolute right-4 bottom-0 flex h-12 w-34 items-center rounded-2xl bg-white p-1">
+            <UsersIcon className="h-10 min-w-10 rounded-xl bg-[#FF6C00] p-2 text-white"></UsersIcon>
+            <div className="flex w-full flex-col items-center">
+              <p className="text-md font-medium">10lac+</p>
+              <p className="text-center text-xs">Happy Users</p>
             </div>
-            <div className="w-34 h-12 p-1 rounded-2xl bg-white flex items-center absolute bottom-0 right-4">
-                <UsersIcon className="h-10 min-w-10 rounded-xl p-2 text-white bg-[#FF6C00]"></UsersIcon>
-                <div className="flex flex-col items-center w-full">
-                    <p className="text-md font-medium">10lac+</p>
-                    <p className="text-xs text-center">Happy Users</p>
-                </div>
-            </div>
+          </div>
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default ImageAndTextContainer2
+export default ImageAndTextContainer2;

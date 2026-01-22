@@ -1,26 +1,21 @@
-function BenefitCard({ Icon, text }) {
-  const [MainIcon, BadgeIcon] = Icon;
+function BenefitCard({ icons, text }) {
+  const [MainIcon, BadgeIcon] = icons;
 
   return (
     <div
       tabIndex={0}
-      className="BenefitCard group relative w-full items-stretch bg-white rounded-3xl p-4 border border-orange-100
-                 hover:-translate-y-2 hover:shadow-2xl
-                 transition-all duration-3000ms outline-none overflow-hidden"
+      role="article"
+      className="group relative w-full overflow-hidden rounded-3xl border border-orange-100 bg-white p-4 transition-all duration-300 outline-none hover:-translate-y-2 hover:shadow-2xl focus:-translate-y-2 focus:shadow-2xl"
     >
-    <div className="absolute top-0 left-0 h-1 w-full overflow-hidden
-                transform -translate-x-full
-                group-hover:translate-x-0 group-focus:translate-x-0 
-                transition-transform duration-700 ease-out
-                bg-linear-to-r from-orange-400 via-orange-600 to-black
-                pointer-events-none">
-    </div>
-      <div className="flex justify-between mb-3">
-        <MainIcon className="w-10 h-10 text-[#FF6C00] bg-[#BD50001A] rounded-full p-1 group-hover:rotate-360 group-focus:rotate-360  transition duration-700" />
-        <BadgeIcon className="w-10 h-10" />
+      {/* Top hover line */}
+      <div className="pointer-events-none absolute top-0 left-0 h-1 w-full -translate-x-full bg-linear-to-r from-orange-400 via-orange-600 to-black transition-transform duration-700 ease-out group-hover:translate-x-0 group-focus:translate-x-0" />
+
+      <div className="mb-3 flex justify-between">
+        <MainIcon className="h-10 w-10 rounded-full bg-[#BD50001A] p-1 text-[#FF6C00] transition-transform duration-700 group-hover:rotate-360 group-focus:rotate-360" />
+        <BadgeIcon className="h-10 w-10" />
       </div>
 
-      <p className="font-mono font-semibold text-center md:text-xl mt-2">
+      <p className="mt-2 text-center font-mono font-semibold md:text-xl">
         {text}
       </p>
     </div>

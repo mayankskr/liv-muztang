@@ -1,4 +1,39 @@
-@import "tailwindcss";
-:root{
-  background-color:#F1F5F7;
+@import 'tailwindcss';
+:root {
+  background-color: #f1f5f7;
+}
+/* ensure root is column */
+.swiper {
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 0 40px !important;
+  margin-top: 20px;
+  padding-bottom: 70px !important; /* reserve space for pagination */
+}
+
+/* target the wrapper inside swiper */
+.swiper > .swiper-wrapper {
+  order: 1;
+}
+
+/* force pagination below slides */
+.swiper > .swiper-pagination {
+  order: 2;
+  position: relative !important;
+  margin-top: 18px !important;
+  width: 100%;
+  text-align: center;
+  transform: none !important; /* prevent any translate from earlier rules */
+}
+
+/* push arrows outside and avoid overlap */
+.swiper .swiper-button-next {
+  top: 35% !important;
+}
+.swiper .swiper-button-prev {
+  top: 35% !important;
+}
+.swiper-slide {
+  height: auto !important;
+  display: flex !important;
 }
