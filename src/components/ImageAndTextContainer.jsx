@@ -1,7 +1,7 @@
 import ImageCard from './ImageCard';
 import { CheckIcon } from '@heroicons/react/24/outline';
 import PhoneButton from './PhoneButton';
-function ImageAndTextContainer() {
+function ImageAndTextContainer({heading,para,infoPoint1,infoPoint2,infoPoint3,infoPhoneButton}) {
   return (
     <div className="ImageAndTextContainer flex flex-col md:mt-8 md:flex-row lg:mt-12">
       <div className="ImageContainer gap-2 px-5 pt-5 md:grid md:w-[50%] md:grid-cols-2 md:gap-4">
@@ -28,30 +28,30 @@ function ImageAndTextContainer() {
       <div className="TextContainer ml-1 md:w-[50%]">
         <div className="mt-4">
           <p className="inline-block bg-linear-to-r from-[#0b1114] via-[#613619] to-[#FF6C00] bg-clip-text py-2 text-left text-2xl font-semibold text-transparent md:text-3xl md:leading-12 lg:mt-4 xl:text-5xl xl:leading-16">
-            सिर्फ चुनिंदा पुरुषों के लिए - Limited Edition Formula.
+            {heading}
           </p>
           <p className="text-left text-xl font-medium md:text-xl lg:mt-2 xl:text-2xl">
-            बिना थके बने रहे पावर टॉनिक से अफ़ीकन पुरुषो जैसी पावर पाए
+            {para}
           </p>
         </div>
         <div>
           <p className="md:text-md my-3 font-semibold lg:text-2xl xl:my-5">
             <CheckIcon className="mx-3 inline h-6 w-6 rounded-full bg-[#FF6C00] stroke-4 p-0.5 text-white"></CheckIcon>
-            ये एक प्रीमियम पावर टॉनिक है।
+            {infoPoint1}
           </p>
           <p className="md:text-md my-3 font-semibold lg:text-2xl xl:my-5">
             <CheckIcon className="mx-3 inline h-6 w-6 rounded-full bg-[#FF6C00] stroke-4 p-0.5 text-white"></CheckIcon>
-            जो खास उन पुरुषों के लिए बनाया गया है।
+            {infoPoint2}
           </p>
           <p className="md:text-md my-3 font-semibold lg:text-2xl xl:my-5">
             <CheckIcon className="mx-3 inline h-6 w-6 rounded-full bg-[#FF6C00] stroke-4 p-0.5 text-white"></CheckIcon>
-            जो extra strength + stamina चाहते हैं।
+            {infoPoint3}
           </p>
         </div>
         <PhoneButton
           content={
             <>
-              <b>जल्द बुक करें +91-9311900247</b>{' '}
+              <b>{infoPhoneButton}</b>
             </>
           }
         />

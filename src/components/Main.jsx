@@ -4,15 +4,17 @@ import BenefitCardContainer from './BenefitCardContainer';
 import ImageAndTextContainer2 from './ImageAndTextContainer2';
 import CommentCardContainer from './CommentCardContainer';
 import Footer from './Footer';
-function Main() {
+function Main({content}) {
+    
+
   return (
     <div className="Main">
-      <Description></Description>
-      <ImageAndTextContainer></ImageAndTextContainer>
+      <Description heading={content.heroHeading} para={content.heroPara}></Description>
+      <ImageAndTextContainer heading={content.infoHeading} para={content.infoPara} infoPoint1={content.infoPoint1} infoPoint2={content.infoPoint2} infoPoint3={content.infoPoint3} infoPhoneButton={content.infoPhoneButton}></ImageAndTextContainer>
       <br />
       <BenefitCardContainer></BenefitCardContainer>
       <br />
-      <ImageAndTextContainer2></ImageAndTextContainer2>
+      <ImageAndTextContainer2 content={content}></ImageAndTextContainer2>
       <br />
       <CommentCardContainer></CommentCardContainer>
       <br />

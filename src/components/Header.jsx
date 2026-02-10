@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import PhoneButton from './PhoneButton';
 
-function Header() {
+function Header({phoneContent}) {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ function Header() {
         alt="Liv Muztang"
         className="h-10 w-auto"
       />
-      <PhoneButton content="+91-9311900247" />
+      <PhoneButton content={phoneContent} />
     </header>
   );
 }

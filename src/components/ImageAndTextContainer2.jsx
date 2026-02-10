@@ -2,34 +2,34 @@ import ImageCard from './ImageCard';
 import { CheckIcon } from '@heroicons/react/24/outline';
 import PhoneButton from './PhoneButton';
 import { UsersIcon } from '@heroicons/react/24/solid';
-function ImageAndTextContainer2() {
+function ImageAndTextContainer2({content}) {
   return (
     <>
       <h1 className="bg-linear-to-r from-[#0b1114] via-[#613619] to-[#FF6C00] bg-clip-text text-center text-3xl leading-12 text-transparent md:text-5xl md:leading-18">
-        अफ्रीकन मुलोंडो की शक्ति के साथ रात को थकना मना है।
+        {content.ingredientsHeading}
       </h1>
 
       <div className="ImageAndTextContainer2 flex w-full flex-col gap-6 md:flex-row md:items-center md:justify-between">
         <div className="TextContainer m-2 md:w-1/2">
           <p className="flex items-start text-xl font-bold xl:m-4">
             <CheckIcon className="m-1 h-14 w-14 rounded-2xl bg-[#ece9e4] p-4 text-[#c15200]" />
-            <span className="my-auto">अफ्रीकन मुलोंडो</span>
+            <span className="my-auto">{content.ingredientsPoint1}</span>
           </p>
           <p className="flex items-start text-xl font-bold xl:m-4">
             <CheckIcon className="m-1 h-14 w-14 rounded-2xl bg-[#ece9e4] p-4 text-[#c15200]" />
-            <span className="my-auto">अश्वगंधा</span>
+            <span className="my-auto">{content.ingredientsPoint2}</span>
           </p>
           <p className="flex items-start text-xl font-bold xl:m-4">
             <CheckIcon className="m-1 h-14 w-14 rounded-2xl bg-[#ece9e4] p-4 text-[#c15200]" />
-            <span className="my-auto">गोक्षुरा</span>
+            <span className="my-auto">{content.ingredientsPoint3}</span>
           </p>
           <p className="flex items-start text-xl font-bold xl:m-4">
             <CheckIcon className="m-1 h-14 w-14 rounded-2xl bg-[#ece9e4] p-4 text-[#c15200]" />
             <span className="my-auto mb-8">
-              शतावरी जैसी जड़ीबूटियों के लाभ पाने के लिए
+              {content.ingredientsPoint4}
             </span>
           </p>
-          <PhoneButton content="जल्द बुक करें +91-9311900247" />
+          <PhoneButton content={content.ingredientsPhoneButton} />
         </div>
 
         <div className="ImageContainer h-stretch relative m-2 mx-auto md:w-1/2">
