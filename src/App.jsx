@@ -1,51 +1,73 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios'; // 1. Import Axios
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import axios from 'axios';
+
+// Components
 import Header from './components/Header';
 import Main from './components/Main';
+import AdminPanel from './admin/AdminPanel';
+import ProtectedRoute from './components/ProtectedRoute'; // Import the guard
 
 function App() {
-  // 2. Create state to hold the data
   const [siteContent, setSiteContent] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // 3. Fetch data on component mount
-useEffect(() => {
-  const fetchData = async () => {
-    try {
-      const response = await axios.get('http://localhost:3000/api/content');
-      
-      // FIX: Access response.data.data to get the actual content object
-      // response.data = { success: true, data: {...} }
-      // response.data.data = { headerPhoneButton: "...", ... }
-      if (response.data && response.data.success) {
-        setSiteContent(response.data.data); 
+  // Fetch data for the public home page
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:3000/api/content');
+        if (response.data && response.data.success) {
+          setSiteContent(response.data.data);
+        }
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching content:", error);
+        setLoading(false);
       }
-      
-      setLoading(false);
-    } catch (error) {
-      console.error("Error fetching content:", error);
-      setLoading(false);
-    }
-  };
+    };
+    fetchData();
+  }, []);
 
-  fetchData();
-}, []);
-
-  // 4. Show a loading state so the UI doesn't break while fetching
-  if (loading) {
-    return <div className="text-center mt-20">Loading...</div>;
-  }
+  if (loading) return <div className="text-center mt-20">Loading...</div>;
 
   return (
-    <div className="max-w-screen">
-      {/* 5. Pass specific data down as props */}
-      {siteContent && (
-        <>
-          <Header phoneContent={siteContent.headerPhoneButton} />
-          <Main content={siteContent} />
-        </>
-      )}
-    </div>
+    <BrowserRouter>
+      {/* Optional: Navigation Bar */}
+      <nav className="bg-gray-800 text-white p-4 flex justify-between">
+        <Link to="/" className="font-bold text-xl hover:text-gray-300">My Website</Link>
+        <Link to="/admin" className="text-sm bg-blue-600 px-3 py-1 rounded hover:bg-blue-500">
+          Admin Login
+        </Link>
+      </nav>
+
+      <Routes>
+        {/* Route 1: Public Home Page */}
+        <Route 
+          path="/" 
+          element={
+            siteContent ? (
+              <>
+                <Header phoneContent={siteContent.headerPhoneButton} />
+                <Main content={siteContent} />
+              </>
+            ) : (
+              <div>No content available</div>
+            )
+          } 
+        />
+
+        {/* Route 2: Protected Admin Panel */}
+        <Route 
+          path="/admin" 
+          element={
+            <ProtectedRoute>
+              <AdminPanel />
+            </ProtectedRoute>
+          } 
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
