@@ -19,7 +19,7 @@ export default function AdminPanel() {
     ingredientsPoint4: "",
     ingredientsPhoneButton: "",
   });
-
+  const [queryData ,setQueryData]= useState([""])
   const [loading, setLoading] = useState(true);
   const [status, setStatus] = useState({ type: "", message: "" });
 
@@ -40,6 +40,22 @@ export default function AdminPanel() {
     };
     fetchData();
   }, []);
+
+  useEffect(()=>{
+    const fetchQuery = async()=>{
+      try {
+        const response = await axios.get("http://localhost:3000/api/query")
+        if (response.data && response.data.success) {
+          setFormData(response.data.data);
+        }
+      } catch (error) {
+         console.error("Error fetching Query:", error);
+        setStatus({ type: "error", message: "Failed to load Query" });
+      } finally {
+        setLoading(false);
+      }
+    }
+  })
 
   // 2. Handle Input Changes
   const handleChange = (e) => {
@@ -144,6 +160,9 @@ export default function AdminPanel() {
           </button>
         </div>
       </form>
+      <hr />
+      <hr />
+      
     </div>
   );
 }

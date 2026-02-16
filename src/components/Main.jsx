@@ -4,6 +4,7 @@ import BenefitCardContainer from './BenefitCardContainer';
 import ImageAndTextContainer2 from './ImageAndTextContainer2';
 import CommentCardContainer from './CommentCardContainer';
 import Footer from './Footer';
+import QueryForm from './QueryForm';
 function Main({content}) {
     
 
@@ -17,6 +18,8 @@ function Main({content}) {
       <ImageAndTextContainer2 content={content}></ImageAndTextContainer2>
       <br />
       <CommentCardContainer></CommentCardContainer>
+      <br />
+      <QueryForm></QueryForm>
       <br />
       <Footer></Footer>
     </div>
