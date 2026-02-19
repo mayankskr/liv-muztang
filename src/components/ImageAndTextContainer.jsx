@@ -1,7 +1,14 @@
 import ImageCard from './ImageCard';
 import { CheckIcon } from '@heroicons/react/24/outline';
 import PhoneButton from './PhoneButton';
-function ImageAndTextContainer({heading,para,infoPoint1,infoPoint2,infoPoint3,infoPhoneButton}) {
+function ImageAndTextContainer({
+  heading,
+  para,
+  infoPoint1,
+  infoPoint2,
+  infoPoint3,
+  infoPhoneButton,
+}) {
   return (
     <div className="ImageAndTextContainer flex flex-col md:mt-8 md:flex-row lg:mt-12">
       <div className="ImageContainer gap-2 px-5 pt-5 md:grid md:w-[50%] md:grid-cols-2 md:gap-4">

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import PhoneButton from './PhoneButton';
 
-function Header({phoneContent}) {
+function Header({ phoneContent }) {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {

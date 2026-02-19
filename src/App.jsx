@@ -22,29 +22,34 @@ function App() {
         }
         setLoading(false);
       } catch (error) {
-        console.error("Error fetching content:", error);
+        console.error('Error fetching content:', error);
         setLoading(false);
       }
     };
     fetchData();
   }, []);
 
-  if (loading) return <div className="text-center mt-20">Loading...</div>;
+  if (loading) return <div className="mt-20 text-center">Loading...</div>;
 
   return (
     <BrowserRouter>
       {/* Optional: Navigation Bar */}
-      <nav className="bg-gray-800 text-white p-4 flex justify-between">
-        <Link to="/" className="font-bold text-xl hover:text-gray-300">My Website</Link>
-        <Link to="/admin" className="text-sm bg-blue-600 px-3 py-1 rounded hover:bg-blue-500">
+      <nav className="flex justify-between bg-gray-800 p-4 text-white">
+        <Link to="/" className="text-xl font-bold hover:text-gray-300">
+          My Website
+        </Link>
+        <Link
+          to="/admin"
+          className="rounded bg-blue-600 px-3 py-1 text-sm hover:bg-blue-500"
+        >
           Admin Login
         </Link>
       </nav>
 
       <Routes>
         {/* Route 1: Public Home Page */}
-        <Route 
-          path="/" 
+        <Route
+          path="/"
           element={
             siteContent ? (
               <>
@@ -54,17 +59,17 @@ function App() {
             ) : (
               <div>No content available</div>
             )
-          } 
+          }
         />
 
         {/* Route 2: Protected Admin Panel */}
-        <Route 
-          path="/admin" 
+        <Route
+          path="/admin"
           element={
             <ProtectedRoute>
               <AdminPanel />
             </ProtectedRoute>
-          } 
+          }
         />
       </Routes>
     </BrowserRouter>

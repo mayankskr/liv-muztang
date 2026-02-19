@@ -1,4 +1,4 @@
-function Description({heading,para}) {
+function Description({ heading, para }) {
   return (
     <section className="pt-20">
       <h1 className="mx-auto max-w-3xl text-center text-3xl leading-tight font-extrabold md:text-6xl">
@@ -7,9 +7,7 @@ function Description({heading,para}) {
         </span>
       </h1>
 
-      <p className="text-md mt-4 text-center font-medium md:text-2xl">
-        {para}
-      </p>
+      <p className="text-md mt-4 text-center font-medium md:text-2xl">{para}</p>
     </section>
   );
 }

@@ -2,7 +2,7 @@ import ImageCard from './ImageCard';
 import { CheckIcon } from '@heroicons/react/24/outline';
 import PhoneButton from './PhoneButton';
 import { UsersIcon } from '@heroicons/react/24/solid';
-function ImageAndTextContainer2({content}) {
+function ImageAndTextContainer2({ content }) {
   return (
     <>
       <h1 className="bg-linear-to-r from-[#0b1114] via-[#613619] to-[#FF6C00] bg-clip-text text-center text-3xl leading-12 text-transparent md:text-5xl md:leading-18">
@@ -25,9 +25,7 @@ function ImageAndTextContainer2({content}) {
           </p>
           <p className="flex items-start text-xl font-bold xl:m-4">
             <CheckIcon className="m-1 h-14 w-14 rounded-2xl bg-[#ece9e4] p-4 text-[#c15200]" />
-            <span className="my-auto mb-8">
-              {content.ingredientsPoint4}
-            </span>
+            <span className="my-auto mb-8">{content.ingredientsPoint4}</span>
           </p>
           <PhoneButton content={content.ingredientsPhoneButton} />
         </div>
