@@ -15,7 +15,7 @@ function Header({ phoneContent }) {
 
   return (
     <header
-      className={`fixed z-10 flex w-full items-center justify-between px-2 py-3 transition duration-300 md:px-8 ${scrolled ? 'bg-white/30 backdrop-blur-md' : ''}`}
+      className={` z-10 flex w-full items-center justify-between px-2 py-3 transition duration-300 md:px-8 ${scrolled ? 'bg-white/30 backdrop-blur-md' : ''}`}
     >
       <img
         src="https://www.anmolherb.in/assets/img/logo.png"
